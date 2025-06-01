@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Concepts: Hash & RSA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- CryptoJS library (for Hashing) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+</head>
+<body>
+    <div class="lab-container">
+        <header class="lab-header">
+            <i class="fas fa-atom header-icon"></i>
+            <h1>Cryptography <span class="highlight">Lab</span></h1>
+            <p>Explore Hashing & Conceptual RSA Encryption</p>
+        </header>
+
+        <nav class="tab-navigation">
+            <button class="tab-link active" data-tab="hash"><i class="fas fa-hashtag"></i> Hash Functions</button>
+            <button class="tab-link" data-tab="rsa"><i class="fas fa-key"></i> RSA (Conceptual)</button>
+        </nav>
+
+        <main class="content-tabs">
+            <!-- Hash Functions Tab -->
+            <section id="hash" class="tab-content active">
+                <div class="content-card">
+                    <h2><i class="fas fa-fingerprint title-icon"></i> Generate SHA-256 Hash</h2>
+                    <p class="description">Enter any data to see its unique SHA-256 hash. Notice how even a small change drastically alters the output. Hashes are one-way.</p>
+                    <div class="form-group">
+                        <label for="hash-input"><i class="fas fa-keyboard"></i> Input Data:</label>
+                        <textarea id="hash-input" rows="4" placeholder="Type your data here..."></textarea>
+                        <p class="error-message" id="hash-error"></p>
+                    </div>
+                    <button id="generateHashBtn" class="action-btn">
+                        <i class="fas fa-cogs"></i> Generate Hash
+                    </button>
+                    <div class="output-area">
+                        <label><i class="fas fa-terminal"></i> SHA-256 Output (Hex):</label>
+                        <div class="output-box" id="hash-output" aria-live="polite"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RSA (Conceptual) Tab -->
+            <section id="rsa" class="tab-content">
+                <div class="content-card">
+                    <h2><i class="fas fa-user-secret title-icon"></i> RSA Conceptual Demo</h2>
+                    <p class="description">This is a simplified illustration of asymmetric encryption using public/private key concepts. <strong>Not actual RSA mathematics.</strong></p>
+
+                    <button id="generateRSAKeysBtn" class="action-btn rsa-key-btn">
+                        <i class="fas fa-key"></i> Generate Conceptual Key Pair
+                    </button>
+                    <div class="rsa-keys-display">
+                        <div class="key-box">
+                            <label><i class="fas fa-unlock-alt"></i> Conceptual Public Key:</label>
+                            <div class="output-box key-text" id="rsa-public-key">N/A</div>
+                        </div>
+                        <div class="key-box">
+                            <label><i class="fas fa-lock"></i> Conceptual Private Key:</label>
+                            <div class="output-box key-text" id="rsa-private-key">N/A</div>
+                        </div>
+                         <p class="error-message" id="rsa-key-error"></p>
+                    </div>
+                    <hr class="separator">
+                    <div class="form-group">
+                        <label for="rsa-message-input"><i class="fas fa-envelope"></i> Message to Process:</label>
+                        <textarea id="rsa-message-input" rows="3" placeholder="Your secret message..."></textarea>
+                        <p class="error-message" id="rsa-message-error"></p>
+                    </div>
+                    <div class="rsa-action-buttons">
+                        <button id="rsaEncryptBtn" class="action-btn rsa-process-btn">
+                            <i class="fas fa-lock"></i> Encrypt (Conceptual)
+                        </button>
+                        <button id="rsaDecryptBtn" class="action-btn rsa-process-btn decrypt">
+                            <i class="fas fa-unlock"></i> Decrypt (Conceptual)
+                        </button>
+                    </div>
+                     <div class="output-area">
+                        <label><i class="fas fa-file-alt"></i> Processed Message:</label>
+                        <div class="output-box" id="rsa-processed-output" aria-live="polite"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="lab-footer">
+            <p><i class="fas fa-flask"></i> Educational Demonstration Only. <i class="fas fa-tools"></i></p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
