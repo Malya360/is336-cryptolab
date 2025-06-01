@@ -12,7 +12,7 @@ CryptoLab: Interactive Cryptography Demonstrator
 
 **Important Disclaimer:** The RSA module in CryptoLab is purely **conceptual and educational**. It does **not** perform actual mathematical RSA encryption and is **not secure for any real-world use**. Its purpose is solely to explain the *idea* behind public/private key cryptography. The SHA-256 hashing uses the standard algorithm via CryptoJS.
 
-Deployed Application: [**Link to your deployed CryptoLab**](https://your-cryptolab.netlify.app) *(replace with your deployment link)*
+Deployed Application: (https://your-cryptolab.netlify.app) 
 
 ## Table of Contents
 - [Features](#features)
